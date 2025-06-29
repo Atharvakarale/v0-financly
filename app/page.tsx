@@ -1,29 +1,23 @@
-"use client"
-import { useRouter } from "next/navigation"
-import LoginForm from "@/components/auth/login-form"
-import Dashboard from "@/components/dashboard/dashboard"
-import { useAuth } from "@/hooks/use-auth"
-import { ThemeProvider } from "@/components/theme-provider"
-import { Toaster } from "@/components/ui/toaster"
+import { DashboardHeader } from "@/components/dashboard-header"
+import { FinancialOverview } from "@/components/financial-overview"
+import { RecentTransactions } from "@/components/recent-transactions"
+import { BudgetTracker } from "@/components/budget-tracker"
+import { ExpenseChart } from "@/components/expense-chart"
 
-export default function Home() {
-  const { user, loading } = useAuth()
-  const router = useRouter()
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary"></div>
-      </div>
-    )
-  }
-
+export default function Dashboard() {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-      <div className="min-h-screen bg-background">
-        {user ? <Dashboard /> : <LoginForm />}
-        <Toaster />
-      </div>
-    </ThemeProvider>
+    <div className="min-h-screen bg-gray-50">
+      <DashboardHeader />
+      <main className="container mx-auto px-4 py-8">
+        <div className="grid gap-6">
+          <FinancialOverview />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <RecentTransactions />
+            <BudgetTracker />
+          </div>
+          <ExpenseChart />
+        </div>
+      </main>
+    </div>
   )
 }

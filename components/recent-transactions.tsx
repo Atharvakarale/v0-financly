@@ -6,7 +6,7 @@ export function RecentTransactions() {
     {
       id: 1,
       description: "Grocery Shopping",
-      amount: "-₹2,450",
+      amount: "-$245",
       date: "Today",
       category: "Food",
       type: "expense",
@@ -14,7 +14,7 @@ export function RecentTransactions() {
     {
       id: 2,
       description: "Salary Credit",
-      amount: "+₹85,000",
+      amount: "+$8,500",
       date: "Yesterday",
       category: "Income",
       type: "income",
@@ -22,7 +22,7 @@ export function RecentTransactions() {
     {
       id: 3,
       description: "Electricity Bill",
-      amount: "-₹1,200",
+      amount: "-$120",
       date: "2 days ago",
       category: "Utilities",
       type: "expense",
@@ -30,7 +30,7 @@ export function RecentTransactions() {
     {
       id: 4,
       description: "Online Shopping",
-      amount: "-₹3,500",
+      amount: "-$350",
       date: "3 days ago",
       category: "Shopping",
       type: "expense",
@@ -38,7 +38,7 @@ export function RecentTransactions() {
     {
       id: 5,
       description: "Freelance Payment",
-      amount: "+₹15,000",
+      amount: "+$1,500",
       date: "4 days ago",
       category: "Income",
       type: "income",

@@ -5,26 +5,26 @@ export function BudgetTracker() {
   const budgets = [
     {
       category: "Food & Dining",
-      spent: 8500,
-      budget: 12000,
+      spent: 850,
+      budget: 1200,
       color: "bg-blue-500",
     },
     {
       category: "Transportation",
-      spent: 4200,
-      budget: 6000,
+      spent: 420,
+      budget: 600,
       color: "bg-green-500",
     },
     {
       category: "Entertainment",
-      spent: 3800,
-      budget: 4000,
+      spent: 380,
+      budget: 400,
       color: "bg-yellow-500",
     },
     {
       category: "Shopping",
-      spent: 7500,
-      budget: 8000,
+      spent: 750,
+      budget: 800,
       color: "bg-purple-500",
     },
   ]
@@ -43,13 +43,13 @@ export function BudgetTracker() {
                 <div className="flex justify-between items-center">
                   <span className="font-medium text-gray-900">{budget.category}</span>
                   <span className="text-sm text-gray-500">
-                    ₹{budget.spent.toLocaleString()} / ₹{budget.budget.toLocaleString()}
+                    ${budget.spent.toLocaleString()} / ${budget.budget.toLocaleString()}
                   </span>
                 </div>
                 <Progress value={percentage} className="h-2" />
                 <div className="flex justify-between text-xs text-gray-500">
                   <span>{percentage.toFixed(1)}% used</span>
-                  <span>₹{(budget.budget - budget.spent).toLocaleString()} remaining</span>
+                  <span>${(budget.budget - budget.spent).toLocaleString()} remaining</span>
                 </div>
               </div>
             )

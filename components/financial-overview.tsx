@@ -5,28 +5,28 @@ export function FinancialOverview() {
   const stats = [
     {
       title: "Total Balance",
-      amount: "₹1,24,500",
+      amount: "$12,450",
       change: "+12.5%",
       changeType: "positive",
       icon: Wallet,
     },
     {
       title: "Monthly Income",
-      amount: "₹85,000",
+      amount: "$8,500",
       change: "+8.2%",
       changeType: "positive",
       icon: TrendingUp,
     },
     {
       title: "Monthly Expenses",
-      amount: "₹42,300",
+      amount: "$4,230",
       change: "-3.1%",
       changeType: "negative",
       icon: CreditCard,
     },
     {
       title: "Savings",
-      amount: "₹42,700",
+      amount: "$4,270",
       change: "+15.3%",
       changeType: "positive",
       icon: ArrowUpIcon,

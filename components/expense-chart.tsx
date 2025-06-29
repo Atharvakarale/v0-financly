@@ -5,12 +5,12 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 
 export function ExpenseChart() {
   const data = [
-    { month: "Jan", income: 82000, expenses: 45000 },
-    { month: "Feb", income: 78000, expenses: 42000 },
-    { month: "Mar", income: 85000, expenses: 48000 },
-    { month: "Apr", income: 88000, expenses: 44000 },
-    { month: "May", income: 85000, expenses: 46000 },
-    { month: "Jun", income: 85000, expenses: 42300 },
+    { month: "Jan", income: 8200, expenses: 4500 },
+    { month: "Feb", income: 7800, expenses: 4200 },
+    { month: "Mar", income: 8500, expenses: 4800 },
+    { month: "Apr", income: 8800, expenses: 4400 },
+    { month: "May", income: 8500, expenses: 4600 },
+    { month: "Jun", income: 8500, expenses: 4230 },
   ]
 
   const CustomTooltip = ({ active, payload, label }: any) => {
@@ -20,7 +20,7 @@ export function ExpenseChart() {
           <p className="font-medium">{`${label}`}</p>
           {payload.map((entry: any, index: number) => (
             <p key={index} style={{ color: entry.color }}>
-              {`${entry.dataKey === "income" ? "Income" : "Expenses"}: ₹${entry.value.toLocaleString()}`}
+              {`${entry.dataKey === "income" ? "Income" : "Expenses"}: $${entry.value.toLocaleString()}`}
             </p>
           ))}
         </div>
@@ -40,7 +40,7 @@ export function ExpenseChart() {
             <BarChart data={data}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="month" />
-              <YAxis tickFormatter={(value) => `₹${(value / 1000).toFixed(0)}k`} />
+              <YAxis tickFormatter={(value) => `$${(value / 1000).toFixed(0)}k`} />
               <Tooltip content={<CustomTooltip />} />
               <Bar dataKey="income" fill="#10b981" name="Income" />
               <Bar dataKey="expenses" fill="#ef4444" name="Expenses" />

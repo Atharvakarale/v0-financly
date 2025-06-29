@@ -20,7 +20,7 @@ export function AddTransactionForm() {
     e.preventDefault()
     // Handle form submission
     console.log({
-      amount: `₹${amount}`,
+      amount: `$${amount}`,
       description,
       category,
       type,
@@ -48,9 +48,9 @@ export function AddTransactionForm() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="amount">Amount (₹)</Label>
+            <Label htmlFor="amount">Amount ($)</Label>
             <div className="relative">
-              <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">₹</span>
+              <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">$</span>
               <Input
                 id="amount"
                 type="number"

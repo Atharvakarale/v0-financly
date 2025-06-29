@@ -13,6 +13,7 @@ A modern, full-stack financial analytics dashboard built with Next.js, TypeScrip
 ### Dashboard & Analytics
 - **Interactive Dashboard**: Beautiful overview of your financial health
 - **Statistics Cards**: Balance, Revenue, Expenses, and Savings tracking
+- **Recent Transactions**: Modern activity feed with filtering
 - **Data Visualizations**: 
   - Pie charts for revenue vs expenses distribution
   - Line charts for monthly trends
@@ -35,6 +36,8 @@ A modern, full-stack financial analytics dashboard built with Next.js, TypeScrip
 - **Responsive Design**: Works perfectly on all devices
 - **Smooth Animations**: Framer Motion powered animations
 - **Modern Components**: Built with Radix UI and Tailwind CSS
+- **Glass Morphism**: Beautiful backdrop blur effects
+- **Micro-interactions**: Hover effects and smooth transitions
 
 ## 🛠️ Tech Stack
 
@@ -95,6 +98,27 @@ A modern, full-stack financial analytics dashboard built with Next.js, TypeScrip
 6. **Open your browser**
    Navigate to `http://localhost:3000`
 
+## 🧪 API Testing
+
+### Postman Collection
+A comprehensive Postman collection is included for testing all API endpoints:
+
+1. **Import Collection**: Use `postman/financly-api-collection.json`
+2. **Test Authentication**: Register and login endpoints
+3. **Test Transactions**: CRUD operations, filtering, search
+4. **Test Error Handling**: Invalid requests and edge cases
+
+See `postman/README.md` for detailed testing instructions.
+
+### API Endpoints
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User login
+- `GET /api/transactions` - Get transactions with filtering/pagination
+- `POST /api/transactions` - Create new transaction
+- `PUT /api/transactions` - Update transaction
+- `DELETE /api/transactions` - Delete transaction
+- `GET /api/transactions/export` - Export transactions as CSV
+
 ## 🗄️ Database Schema
 
 ### Users Collection
@@ -124,54 +148,6 @@ A modern, full-stack financial analytics dashboard built with Next.js, TypeScrip
 }
 \`\`\`
 
-## 🔌 API Endpoints
-
-### Authentication
-- `POST /api/auth/login` - User login
-- `POST /api/auth/register` - User registration
-
-### Transactions
-- `GET /api/transactions` - Get transactions with filtering and pagination
-- `POST /api/transactions` - Create new transaction
-- `PUT /api/transactions?id={id}` - Update transaction
-- `DELETE /api/transactions?id={id}` - Delete transaction
-- `GET /api/transactions/export` - Export transactions as CSV
-
-### Request/Response Examples
-
-#### Login
-\`\`\`javascript
-// POST /api/auth/login
-{
-  "email": "user@example.com",
-  "password": "password123"
-}
-
-// Response
-{
-  "token": "jwt-token-here",
-  "user": {
-    "id": "user-id",
-    "name": "John Doe",
-    "email": "user@example.com"
-  }
-}
-\`\`\`
-
-#### Get Transactions
-\`\`\`javascript
-// GET /api/transactions?page=1&limit=10&category=Revenue&status=Paid
-{
-  "transactions": [...],
-  "pagination": {
-    "page": 1,
-    "limit": 10,
-    "total": 100,
-    "pages": 10
-  }
-}
-\`\`\`
-
 ## 🎨 UI Components
 
 ### Key Components
@@ -179,6 +155,7 @@ A modern, full-stack financial analytics dashboard built with Next.js, TypeScrip
 - **Dashboard**: Main dashboard layout with stats and charts
 - **StatsCards**: Animated financial summary cards
 - **ChartsSection**: Data visualization components
+- **RecentTransactions**: Modern activity feed with filtering
 - **TransactionsTable**: Advanced table with filtering and pagination
 - **AddTransactionModal**: Form for creating new transactions
 
@@ -189,6 +166,7 @@ A modern, full-stack financial analytics dashboard built with Next.js, TypeScrip
 - Smooth animations and transitions
 - Custom scrollbars
 - Gradient backgrounds
+- Glass morphism effects
 
 ## 🔧 Development
 
@@ -213,6 +191,7 @@ financly-dashboard/
 ├── types/              # TypeScript type definitions
 ├── data/               # Sample data files
 ├── api/                # API route handlers
+├── postman/            # API testing collection
 └── scripts/            # Database scripts
 \`\`\`
 
@@ -256,3 +235,4 @@ If you have any questions or need help, please open an issue on GitHub or contac
 ---
 
 **Happy Financial Tracking! 💰📊**
+\`\`\`
